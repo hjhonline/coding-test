@@ -11,7 +11,7 @@ public class Main {
 		// 공부한 내용 출력
 		m.stringSolutionMemo();
 		
-		// 문제1 출력
+		// 문제1. 출력
 		// 문자열 받기 위해 생성
 		String str = "Computercooler";
 		// 특정 문자 받기 위해 생성
