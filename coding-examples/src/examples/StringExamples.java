@@ -115,17 +115,41 @@ public class StringExamples {
 	public ArrayList<String> solution4(int n, String[] strArray) {
 		
 		// 정답 변수 생성
-		ArrayList<String> list = new ArrayList<String>();
+		ArrayList<String> answerList = new ArrayList<String>();
 		
 		// 방법1. StringBuilder 사용하기
+		// StringBuilder를 쓰면 String 객체를 낭비하지 않아도 되므로 메모리 낭비X
 		for(String str : strArray) {
-			
 			String tmp = new StringBuilder(str).reverse().toString();
-			list.add(tmp);
+			answerList.add(tmp);
+		}
+		
+		// 방법2. 직접 구현
+		// 대칭하는 위치를 바꾼다는 이미지
+		for(String str : strArray) {
+			// strArray의 str을 char배열에 저장
+			char[] ch = str.toCharArray();
+			// 문자열의 처음 위치(lt), 마지막 위치(rt)의 변수를 선언
+			// rt는 0번 인덱스부터 시작이니까 -1 꼭 해준다
+			int lt = 0, rt= str.length() -1;
+			while (lt<rt) {
+				// 지금 문자 저장
+				char tmp = ch[lt];
+				// 위치 뒤집기
+				ch[lt] = ch[rt];
+				ch[rt] = tmp;
+				// 그 다음 인덱스로 넘어가기
+				lt++;
+				rt--;
+			}
+			// 문자 배열을 스트링화 시켜줌
+			String tmp = String.valueOf(ch);
+			// 문자열을 정답리스트에 저장
+			answerList.add(tmp);
 		}
 		
 		// 정답 리턴
-		return list;
+		return answerList;
 		
 	}
 }
