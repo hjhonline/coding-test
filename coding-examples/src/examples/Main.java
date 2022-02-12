@@ -13,9 +13,9 @@ public class Main {
 		
 		// 문제1. 출력
 		String str1 = "Computercooler";
-		char c = 'c';
+		char c1 = 'c';
 		
-		System.out.println("문제1의 정답은:" + S.solution1(str1, c));
+		System.out.println("문제1의 정답은:" + S.solution1(str1, c1));
 		
 		// 문제2. 출력
 		String str2 = "StuDY";
@@ -51,7 +51,23 @@ public class Main {
 		String str9 = "g0en2T0s8eSoft";
 		System.out.println("문제9의 정답은:" + S.solution9(str9));
 		
+		// 문제10. 출력
+		String str10 = "teachermode";
+		char c10 = 'e';
+		for(int i : S.solution10(str10, c10)) {
+			System.out.println("문제10의 정답은:" + i);
+		}
+		
+		// 문제11. 출력
+		String str11 = "KSTTTSEEKFKKKDJJGG";
+		System.out.println("문제11의 정답은:" + S.solution11(str11));
+		
+		// 문제12. 출력
+		String str12 = "#****###**#####**#####**##**";
+		int i12 = 4;
+		System.out.println("문제12의 정답은:" + S.solution12(i12, str12));
+		
 	}
-
+	
 
 }
